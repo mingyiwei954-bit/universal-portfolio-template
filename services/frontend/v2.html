@@ -1,0 +1,679 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<script id="animfolio-theme-bootstrap">
+(function(){
+  var scheme='dark';
+  try { var saved=localStorage.getItem('animfolio_theme'); if(saved==='dark'||saved==='light') scheme=saved; } catch(e) {}
+  document.documentElement.setAttribute('data-animfolio-pre-theme',scheme);
+  document.documentElement.classList.add('animfolio-theme-booting');
+  window.__animfolioInitialTheme=scheme;
+})();
+</script>
+<style id="animfolio-theme-bootstrap-style">
+html[data-animfolio-pre-theme="dark"],html[data-animfolio-pre-theme="dark"] body{background:#0a0a0a;color:#e5e5e5}
+html[data-animfolio-pre-theme="light"],html[data-animfolio-pre-theme="light"] body{background:#ffffff;color:#1a1a1a}
+html.animfolio-theme-booting .animfolio-container,html.animfolio-theme-booting .animfolio-container *{transition:none!important}
+</style>
+
+<title>这里是姓名作品集 — GitHub 绿</title>
+<meta content="这里是姓名 — 前端开发。" name="description"/>
+<style>
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 300 700; font-display: swap; src: url('./assets/fonts/inter-latin.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('./assets/fonts/jetbrains-mono-latin.woff2') format('woff2'); }
+
+/*# sourceURL=animfolio-fonts-local-inline-css */
+</style>
+<link href="./assets/css/animfolio-base.css" rel="stylesheet"/>
+<link href="./assets/css/animfolio-animations.css" rel="stylesheet"/>
+<link href="./assets/css/animfolio-nav.css" rel="stylesheet"/>
+<link href="./assets/css/animfolio-contact.css" rel="stylesheet"/>
+<link href="./assets/css/animfolio-gallery.css" rel="stylesheet"/>
+<link href="./assets/css/animfolio-qr.css" rel="stylesheet"/>
+<link href="./assets/css/animfolio-print.css" media="print" rel="stylesheet"/>
+<link href="./assets/css/format.css" rel="stylesheet"/>
+<style id="animfolio-theme-vars">
+.animfolio-container {
+	--animfolio-accent: #238636 !important;
+	--animfolio-accent-hover: #197c2c !important;
+	--animfolio-accent-light: rgba(35, 134, 54, 0.1) !important;
+	--animfolio-accent-subtle: rgba(35, 134, 54, 0.12) !important;
+	--animfolio-accent-shadow: rgba(35, 134, 54, 0.3) !important;
+	--animfolio-accent-glow: rgba(35, 134, 54, 0.5) !important;
+	--animfolio-secondary: #1f6feb !important;
+	--animfolio-secondary-hover: #1565e1 !important;
+	--animfolio-secondary-light: rgba(31, 111, 235, 0.1) !important;
+	--animfolio-on-accent: #ffffff !important;
+	--animfolio-on-secondary: #ffffff !important;
+	--animfolio-bg: #0a0a0a;
+	--animfolio-bg-secondary: #141414;
+	--animfolio-bg-tertiary: #1e1e1e;
+	--animfolio-text: #e5e5e5;
+	--animfolio-text-secondary: #a0a0a0;
+	--animfolio-text-muted: #8a8a8a;
+	--animfolio-border: rgba(255, 255, 255, 0.1);
+	--animfolio-border-strong: rgba(255, 255, 255, 0.2);
+	--animfolio-surface: #1a1a1a;
+	--animfolio-surface-hover: #222222;
+	--animfolio-overlay: rgba(0, 0, 0, 0.75);
+	--animfolio-success: #22c55e;
+	--animfolio-warning: #f59e0b;
+	--animfolio-error: #ef4444;
+	--animfolio-info: #3b82f6;
+	--animfolio-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	--animfolio-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	--animfolio-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+	--animfolio-font-size-base: 16px;
+	--animfolio-font-size-h1: clamp(2.5rem, 5vw, 4rem);
+	--animfolio-font-size-h2: clamp(1.75rem, 3.5vw, 2.5rem);
+	--animfolio-font-size-h3: 1.5rem;
+	--animfolio-font-size-h4: 1.25rem;
+	--animfolio-font-weight-bold: 700;
+	--animfolio-font-weight-medium: 500;
+	--animfolio-line-height: 1.6;
+	--animfolio-letter-spacing: 0em;
+	--animfolio-container-width: 1200px;
+	--animfolio-section-spacing: 100px;
+	--animfolio-radius: 12px;
+	--animfolio-radius-sm: 6px;
+	--animfolio-radius-lg: 16px;
+	--animfolio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+	--animfolio-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+	--animfolio-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+	--animfolio-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.3);
+	--animfolio-duration: 0.6s;
+	--animfolio-delay: 0s;
+	--animfolio-easing: cubic-bezier(0.4, 0, 0.2, 1);
+	--animfolio-easing-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+	--animfolio-stagger: 0.1s;
+	--animfolio-transition-fast: 150ms ease;
+	--animfolio-transition-normal: 300ms ease;
+	--animfolio-transition-slow: 500ms ease;
+	--animfolio-z-base: 1;
+	--animfolio-z-dropdown: 100;
+	--animfolio-z-sticky: 200;
+	--animfolio-z-nav: 300;
+	--animfolio-z-modal: 400;
+	--animfolio-z-lightbox: 500;
+	--animfolio-z-tooltip: 600;
+	--animfolio-z-cursor: 700;
+}
+.animfolio-container--light, .animfolio-container[data-animfolio-scheme="light"] {
+	--animfolio-bg: #ffffff;
+	--animfolio-bg-secondary: #f5f5f5;
+	--animfolio-bg-tertiary: #ebebeb;
+	--animfolio-text: #1a1a1a;
+	--animfolio-text-secondary: #555555;
+	--animfolio-text-muted: #767676;
+	--animfolio-border: rgba(0, 0, 0, 0.1);
+	--animfolio-border-strong: rgba(0, 0, 0, 0.2);
+	--animfolio-surface: #ffffff;
+	--animfolio-surface-hover: #f9f9f9;
+	--animfolio-overlay: rgba(0, 0, 0, 0.5);
+	--animfolio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+	--animfolio-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--animfolio-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+	--animfolio-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+	--animfolio-accent-light: rgba(35, 134, 54, 0.08) !important;
+	--animfolio-accent-subtle: rgba(35, 134, 54, 0.05) !important;
+	--animfolio-accent-shadow: rgba(35, 134, 54, 0.2) !important;
+	--animfolio-accent-glow: rgba(35, 134, 54, 0.15) !important;
+	--animfolio-on-accent: #ffffff !important;
+	--animfolio-on-secondary: #ffffff !important;
+}
+@media (prefers-color-scheme: light) {
+	.animfolio-container--auto {
+		--animfolio-bg: #ffffff;
+		--animfolio-bg-secondary: #f5f5f5;
+		--animfolio-bg-tertiary: #ebebeb;
+		--animfolio-text: #1a1a1a;
+		--animfolio-text-secondary: #555555;
+		--animfolio-text-muted: #767676;
+		--animfolio-border: rgba(0, 0, 0, 0.1);
+		--animfolio-border-strong: rgba(0, 0, 0, 0.2);
+		--animfolio-surface: #ffffff;
+		--animfolio-surface-hover: #f9f9f9;
+		--animfolio-overlay: rgba(0, 0, 0, 0.5);
+		--animfolio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+		--animfolio-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+		--animfolio-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+		--animfolio-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+		--animfolio-accent-light: rgba(35, 134, 54, 0.08) !important;
+		--animfolio-accent-subtle: rgba(35, 134, 54, 0.05) !important;
+		--animfolio-accent-shadow: rgba(35, 134, 54, 0.2) !important;
+		--animfolio-accent-glow: rgba(35, 134, 54, 0.15) !important;
+		--animfolio-on-accent: #ffffff !important;
+		--animfolio-on-secondary: #ffffff !important;
+	}
+}
+
+.animfolio-container *,.animfolio-container *::before,.animfolio-container *::after{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{margin:0;padding:0;background:#0a0a0a;color:#e5e5e5;font-family:var(--animfolio-font-body,'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif);font-size:var(--animfolio-font-size-base,16px);line-height:var(--animfolio-line-height,1.6);overflow-x:hidden}body.admin-bar{padding-top:32px}body.admin-bar .animfolio-nav--sticky{top:32px}@media screen and (max-width:782px){body.admin-bar{padding-top:46px}body.admin-bar .animfolio-nav--sticky{top:46px}}.wp-site-blocks,.entry-content,.page-content,.post-content{all:unset;display:block}
+/*# sourceURL=animfolio-base-inline-css */
+</style>
+<script>
+document.documentElement.className+=" animfolio-js";(function(){function r(){if(window.animfolio&&window.animfolio._initialized){return;}var e=document.querySelectorAll("[data-animfolio-animate]:not(.animfolio-visible),.animfolio-stagger__item:not(.animfolio-visible)");for(var i=0;i<e.length;i++){e[i].classList.add("animfolio-visible");}}if(document.readyState==="complete"){setTimeout(r,1500);}else{window.addEventListener("load",function(){setTimeout(r,1500);});}setTimeout(r,4000);})();
+//# sourceURL=animfolio-failsafe-js-after
+</script>
+<style>.service-back{position:fixed;left:22px;bottom:22px;z-index:99999;padding:12px 18px;border-radius:999px;background:rgba(20,20,24,.82);color:#fff;text-decoration:none;font:600 14px/1 system-ui;backdrop-filter:blur(12px);box-shadow:0 8px 25px rgba(0,0,0,.18)}</style><link href="../service-language.css?v=6" rel="stylesheet"/></head>
+<body><button aria-label="切换为英文" aria-pressed="true" class="service-language-toggle" data-language="zh" type="button"><span aria-hidden="true" class="service-language-symbol">中</span></button><a aria-label="返回个人主页服务模块" class="service-back" href="../../#services">← 返回主页</a>
+<script>window.ANIMFOLIO_CONTACT_EMAIL = "you@example.com";</script>
+<div class="animfolio-container animfolio-container--dark animfolio-container--format-01 animfolio-container--one-page" data-animfolio-format="format-01-developer" data-animfolio-intensity="medium" data-animfolio-scheme="dark"><script id="animfolio-theme-apply">(function(){var c=document.currentScript.parentElement,s=window.__animfolioInitialTheme||c.getAttribute('data-animfolio-scheme');c.setAttribute('data-animfolio-scheme',s);c.classList.remove('animfolio-container--dark','animfolio-container--light');c.classList.add('animfolio-container--'+s);requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('animfolio-theme-booting')})})})();</script><a class="animfolio-skip-link" href="#hero">跳到主要内容</a><nav aria-label="作品集导航" class="animfolio-nav animfolio-nav--horizontal animfolio-nav--sticky" role="navigation"><a class="animfolio-nav__logo" href="#hero">这里是姓名</a><button aria-controls="animfolio-nav-menu" aria-expanded="false" aria-label="切换导航" class="animfolio-nav__toggle"><span aria-hidden="true" class="animfolio-nav__toggle-bar"></span><span aria-hidden="true" class="animfolio-nav__toggle-bar"></span><span aria-hidden="true" class="animfolio-nav__toggle-bar"></span></button><ul class="animfolio-nav__list" id="animfolio-nav-menu"><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="hero" href="#hero">首页</a></li><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="about" href="#about">关于</a></li><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="experience" href="#experience">经历</a></li><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="skills" href="#skills">技能</a></li><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="projects" href="#projects">项目</a></li><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="stats" href="#stats">数据</a></li><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="achievements" href="#achievements">成就</a></li><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="testimonials" href="#testimonials">评价</a></li><li class="animfolio-nav__item"><a class="animfolio-nav__link" data-animfolio-section="contact" href="#contact">联系</a></li></ul><button aria-label="切换明暗模式" class="animfolio-theme-toggle"><span aria-hidden="true" class="animfolio-theme-toggle__icon animfolio-theme-toggle__icon--sun"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></span><span aria-hidden="true" class="animfolio-theme-toggle__icon animfolio-theme-toggle__icon--moon"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg></span></button></nav><section class="animfolio-section animfolio-section--hero animfolio-section--align-center" data-animfolio-section="hero" id="hero"><div class="animfolio-inner">
+<div class="animfolio-hero">
+<div class="animfolio-hero__content">
+<h1 class="animfolio-hero__name" data-animfolio-animate="fade-up">这里是姓名</h1>
+<h2 class="animfolio-hero__title" data-animfolio-animate="fade-up" data-animfolio-delay="0.1">前端开发</h2>
+<div class="animfolio-hero__subtitle animfolio-hero__typed" data-animfolio-animate="fade-up" data-animfolio-delay="0.2" data-animfolio-typed='["我构建稳定且可持续迭代的 Web 应用。", "我编写清晰、易维护的代码。", "我把想法推进成真正上线的产品。"]'>我构建稳定且可持续迭代的 Web 应用。</div>
+<div class="animfolio-hero__cta" data-animfolio-animate="fade-up" data-animfolio-delay="0.3">
+<a class="animfolio-button animfolio-button--primary animfolio-hero__cta-primary" href="#projects">
+						查看作品					</a>
+<a class="animfolio-button animfolio-button--secondary animfolio-hero__cta-secondary" href="#contact">
+						联系我					</a>
+</div>
+<div class="animfolio-hero__social animfolio-social-icons animfolio-social-icons--outline" data-animfolio-animate="fade-up" data-animfolio-delay="0.4">
+<a aria-label="Github" href="https://github.com/yourusername" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> <span class="animfolio-social__label">Github</span>
+</a>
+<a aria-label="领英" href="https://linkedin.com/in/yourusername" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg> <span class="animfolio-social__label">领英</span>
+</a>
+<a aria-label="推特" href="https://twitter.com/yourusername" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg> <span class="animfolio-social__label">推特</span>
+</a>
+<a aria-label="运球" href="https://dribbble.com/yourusername" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path></svg> <span class="animfolio-social__label">运球</span>
+</a>
+<a aria-label="邮箱" href="mailto:hello@yourdomain.com" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span class="animfolio-social__label">邮箱</span>
+</a>
+</div>
+</div>
+</div>
+</div><!-- .animfolio-inner --></section><section class="animfolio-section animfolio-section--about animfolio-section--align-center" data-animfolio-section="about" id="about"><div class="animfolio-inner"><div class="animfolio-section__header"><h2 class="animfolio-section__title">关于我</h2></div><div class="animfolio-about" data-animfolio-animate="fade-up">
+<div class="animfolio-about__bio">我是一名全栈开发人员，拥有 8 年以上构建解决实际问题的 Web 应用程序的经验。我对干净的架构、开发人员体验和开源充满热情。当我不交付代码时，我可能会为 OSS 项目做出贡献或撰写有关软件设计模式的文章。</div>
+<div class="animfolio-about__fun-facts animfolio-stagger" data-animfolio-stagger="0.1">
+<div class="animfolio-about__fun-fact animfolio-stagger__item">
+					今年我已在 GitHub 上做出了 4,200 多项贡献				</div>
+<div class="animfolio-about__fun-fact animfolio-stagger__item">
+					我的 dotfiles 存储库比我的实际项目有更多的星星				</div>
+<div class="animfolio-about__fun-fact animfolio-stagger__item">
+					我在梦中调试生产问题（认真的）				</div>
+<div class="animfolio-about__fun-fact animfolio-stagger__item">
+					我曾在十四小时的航班上重构一套代码库				</div>
+</div>
+</div>
+</div><!-- .animfolio-inner --></section><section class="animfolio-section animfolio-section--experience animfolio-section--align-center" data-animfolio-section="experience" id="experience"><div class="animfolio-inner"><div class="animfolio-section__header"><h2 class="animfolio-section__title">经历</h2></div>
+<div class="animfolio-timeline animfolio-stagger" data-animfolio-animate="fade-up" data-animfolio-stagger="0.1">
+<div class="animfolio-timeline__line"></div>
+<div class="animfolio-timeline__item animfolio-stagger__item" data-animfolio-animate="fade-up" data-animfolio-delay="0.0">
+<div class="animfolio-timeline__dot"></div>
+<div class="animfolio-timeline__content animfolio-card animfolio-card--bordered">
+<div class="animfolio-timeline__role">前端开发</div>
+<div class="animfolio-timeline__company">TechScale公司</div>
+<div class="animfolio-timeline__date">
+					2021 年 3 月 — 至今 · 加利福尼亚州旧金山（远程）									</div>
+<div class="animfolio-timeline__description">核心平台团队的首席工程师，负责从 Rails 整体迁移到为 50K+ 并发用户提供服务的 Node.js + Go 微服务架构。将 p95 API 延迟减少 60%，并交付实时同步层，在 18 个月内实现零生产事故。</div>
+<div class="animfolio-timeline__tags animfolio-card__tags">
+<span class="animfolio-card__tag">Node.js</span>
+<span class="animfolio-card__tag">Go</span>
+<span class="animfolio-card__tag">React</span>
+<span class="animfolio-card__tag">PostgreSQL</span>
+<span class="animfolio-card__tag">AWS</span>
+</div>
+</div>
+</div>
+<div class="animfolio-timeline__item animfolio-stagger__item" data-animfolio-animate="fade-up" data-animfolio-delay="0.1">
+<div class="animfolio-timeline__dot"></div>
+<div class="animfolio-timeline__content animfolio-card animfolio-card--bordered">
+<div class="animfolio-timeline__role">全栈开发者</div>
+<div class="animfolio-timeline__company">DataFlow Systems</div>
+<div class="animfolio-timeline__date">
+					2018 年 6 月 — 2021 年 2 月 · 美国奥斯汀									</div>
+<div class="animfolio-timeline__description">构建并维护了 200 多个企业帐户使用的面向客户的分析仪表板。引入了 TypeScript 设计系统和 CI 管道，将回归错误减少了 45%，并交付了三个产品团队采用的 GraphQL API 层。</div>
+<div class="animfolio-timeline__tags animfolio-card__tags">
+<span class="animfolio-card__tag">TypeScript</span>
+<span class="animfolio-card__tag">React</span>
+<span class="animfolio-card__tag">GraphQL</span>
+<span class="animfolio-card__tag">Redis</span>
+<span class="animfolio-card__tag">Docker</span>
+</div>
+</div>
+</div>
+<div class="animfolio-timeline__item animfolio-stagger__item" data-animfolio-animate="fade-up" data-animfolio-delay="0.2">
+<div class="animfolio-timeline__dot"></div>
+<div class="animfolio-timeline__content animfolio-card animfolio-card--bordered">
+<div class="animfolio-timeline__role">软件工程师</div>
+<div class="animfolio-timeline__company">Brightline Labs</div>
+<div class="animfolio-timeline__date">
+					2016 年 8 月 — 2018 年 5 月 · 美国丹佛									</div>
+<div class="animfolio-timeline__description">作为第三位工程师加入早期 SaaS 团队，基于 PHP、WordPress 与 Vue.js 完成计费、鉴权和用户引导流程，帮助产品从零增长至 1.2 万名活跃用户。</div>
+<div class="animfolio-timeline__tags animfolio-card__tags">
+<span class="animfolio-card__tag">PHP</span>
+<span class="animfolio-card__tag">WordPress</span>
+<span class="animfolio-card__tag">Vue.js</span>
+<span class="animfolio-card__tag">MySQL</span>
+<span class="animfolio-card__tag">Stripe</span>
+</div>
+</div>
+</div>
+</div>
+</div><!-- .animfolio-inner --></section><section class="animfolio-section animfolio-section--skills animfolio-section--align-center" data-animfolio-section="skills" id="skills"><div class="animfolio-inner"><div class="animfolio-section__header"><h2 class="animfolio-section__title">技能</h2></div>
+<div class="animfolio-f01-heatmap-panel" data-animfolio-animate="fade-up">
+<div class="animfolio-f01-heatmap-panel__head">
+<span class="animfolio-f01-heatmap-panel__title">贡献记录</span>
+<span aria-hidden="true" class="animfolio-f01-heatmap-panel__legend">
+<span class="animfolio-f01-heatmap-panel__legend-label">较少</span>
+<span class="animfolio-f01-heatmap__cell"></span>
+<span class="animfolio-f01-heatmap__cell animfolio-f01-heatmap__cell--l1"></span>
+<span class="animfolio-f01-heatmap__cell animfolio-f01-heatmap__cell--l2"></span>
+<span class="animfolio-f01-heatmap__cell animfolio-f01-heatmap__cell--l3"></span>
+<span class="animfolio-f01-heatmap__cell animfolio-f01-heatmap__cell--l4"></span>
+<span class="animfolio-f01-heatmap-panel__legend-label">更多</span>
+</span>
+</div>
+<div aria-hidden="true" class="animfolio-f01-heatmap" role="presentation"></div>
+<p class="animfolio-f01-heatmap-panel__note">示例数据，仅作展示，不代表实时 GitHub 数据</p>
+</div>
+<div class="animfolio-skills animfolio-skills--bars" data-animfolio-animate="fade-up">
+ 进度条 
+<div class="animfolio-grid animfolio-grid--2 animfolio-stagger" data-animfolio-stagger="0.1">
+<div class="animfolio-skills__category animfolio-stagger__item">
+<h3 class="animfolio-skills__category-title">前端</h3>
+<div class="animfolio-skills__list">
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>React / Next.js</span>
+<span class="animfolio-skills__value">95%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 95%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>TypeScript</span>
+<span class="animfolio-skills__value">90%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 90%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>CSS / Tailwind</span>
+<span class="animfolio-skills__value">92%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 92%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>Vue.js</span>
+<span class="animfolio-skills__value">80%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="animfolio-skills__category animfolio-stagger__item">
+<h3 class="animfolio-skills__category-title">后端</h3>
+<div class="animfolio-skills__list">
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>Node.js</span>
+<span class="animfolio-skills__value">90%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 90%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>PHP / WordPress</span>
+<span class="animfolio-skills__value">85%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 85%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>PostgreSQL</span>
+<span class="animfolio-skills__value">85%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 85%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>REST API</span>
+<span class="animfolio-skills__value">88%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 88%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>LLM / RAG</span>
+<span class="animfolio-skills__value">80%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="animfolio-skills__category animfolio-stagger__item">
+<h3 class="animfolio-skills__category-title">开发运营</h3>
+<div class="animfolio-skills__list">
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>Git / GitHub</span>
+<span class="animfolio-skills__value">95%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 95%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>Docker</span>
+<span class="animfolio-skills__value">78%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 78%"></div>
+</div>
+</div>
+<div class="animfolio-skills__item">
+<div class="animfolio-skills__label">
+<span>AWS</span>
+<span class="animfolio-skills__value">82%</span>
+</div>
+<div class="animfolio-skills__bar">
+<div class="animfolio-skills__bar-fill" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- .animfolio-inner --></section><section class="animfolio-section animfolio-section--projects animfolio-section--align-center" data-animfolio-section="projects" id="projects"><div class="animfolio-inner"><div class="animfolio-section__header"><h2 class="animfolio-section__title">精选项目</h2></div>
+<div class="animfolio-grid animfolio-grid--2 animfolio-stagger" data-animfolio-stagger="0.15">
+<div class="animfolio-project animfolio-card animfolio-card--bordered animfolio-f01-codecard animfolio-stagger__item">
+<div aria-hidden="true" class="animfolio-f01-codecard__bar">
+<span class="animfolio-f01-codecard__dots">
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+</span>
+<span class="animfolio-f01-codecard__file">cloudsync-saas-platform.tsx</span>
+</div>
+<img alt="CloudSync SaaS 平台" class="animfolio-project__image" decoding="async" height="400" loading="lazy" src="./assets/images/project-dashboard.jpg" width="600"/>
+<div class="animfolio-f01-codecard__body">
+<h3 class="animfolio-project__title animfolio-card__title">CloudSync SaaS 平台</h3>
+<p class="animfolio-project__description">一个多租户 SaaS 平台，用于跨设备实时文件同步。采用微服务架构构建，可处理 50K 以上并发连接，延迟低于 100 毫秒。</p>
+<div class="animfolio-project__stack animfolio-card__tags">
+<span class="animfolio-card__tag">React</span>
+<span class="animfolio-card__tag">Node.js</span>
+<span class="animfolio-card__tag">PostgreSQL</span>
+<span class="animfolio-card__tag">Redis</span>
+<span class="animfolio-card__tag">Docker</span>
+</div>
+<div class="animfolio-project__links animfolio-card__footer">
+<a class="animfolio-button animfolio-button--primary" href="#" rel="noopener noreferrer" target="_blank">
+							查看演示						</a>
+<a class="animfolio-button animfolio-button--secondary" href="#" rel="noopener noreferrer" target="_blank">
+							来源						</a>
+</div>
+</div>
+</div>
+<div class="animfolio-project animfolio-card animfolio-card--bordered animfolio-f01-codecard animfolio-stagger__item">
+<div aria-hidden="true" class="animfolio-f01-codecard__bar">
+<span class="animfolio-f01-codecard__dots">
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+</span>
+<span class="animfolio-f01-codecard__file">formkit-open-source-library.tsx</span>
+</div>
+<img alt="FormKit — 开源组件库" class="animfolio-project__image" decoding="async" height="400" loading="lazy" src="./assets/images/project-tech.jpg" width="600"/>
+<div class="animfolio-f01-codecard__body">
+<h3 class="animfolio-project__title animfolio-card__title">FormKit — 开源组件库</h3>
+<p class="animfolio-project__description">面向 React 的无界面表单验证库，获得 2.8K GitHub 星标，提供声明式 API、按需打包、零依赖与完整 TypeScript 支持。</p>
+<div class="animfolio-project__stack animfolio-card__tags">
+<span class="animfolio-card__tag">TypeScript</span>
+<span class="animfolio-card__tag">React</span>
+<span class="animfolio-card__tag">Rollup</span>
+<span class="animfolio-card__tag">Vitest</span>
+</div>
+<div class="animfolio-project__links animfolio-card__footer">
+<a class="animfolio-button animfolio-button--primary" href="#" rel="noopener noreferrer" target="_blank">
+							查看演示						</a>
+<a class="animfolio-button animfolio-button--secondary" href="#" rel="noopener noreferrer" target="_blank">
+							来源						</a>
+</div>
+</div>
+</div>
+<div class="animfolio-project animfolio-card animfolio-card--bordered animfolio-f01-codecard animfolio-stagger__item">
+<div aria-hidden="true" class="animfolio-f01-codecard__bar">
+<span class="animfolio-f01-codecard__dots">
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+</span>
+<span class="animfolio-f01-codecard__file">devflow-cli.tsx</span>
+</div>
+<img alt="DevFlow 命令行工具" class="animfolio-project__image" decoding="async" height="400" loading="lazy" src="./assets/images/project-tech.jpg" width="600"/>
+<div class="animfolio-f01-codecard__body">
+<h3 class="animfolio-project__title animfolio-card__title">DevFlow 命令行工具</h3>
+<p class="animfolio-project__description">一个开发人员生产力 CLI，可自动执行 git 工作流程、管理环境配置和搭建项目模板。每月 npm 下载量超过 15K。</p>
+<div class="animfolio-project__stack animfolio-card__tags">
+<span class="animfolio-card__tag">Node.js</span>
+<span class="animfolio-card__tag">Commander.js</span>
+<span class="animfolio-card__tag">Chalk</span>
+<span class="animfolio-card__tag">询问者</span>
+</div>
+<div class="animfolio-project__links animfolio-card__footer">
+<a class="animfolio-button animfolio-button--primary" href="#" rel="noopener noreferrer" target="_blank">
+							查看演示						</a>
+<a class="animfolio-button animfolio-button--secondary" href="#" rel="noopener noreferrer" target="_blank">
+							来源						</a>
+</div>
+</div>
+</div>
+<div class="animfolio-project animfolio-card animfolio-card--bordered animfolio-f01-codecard animfolio-stagger__item">
+<div aria-hidden="true" class="animfolio-f01-codecard__bar">
+<span class="animfolio-f01-codecard__dots">
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+</span>
+<span class="animfolio-f01-codecard__file">paystream-api-service.tsx</span>
+</div>
+<img alt="PayStream API 服务" class="animfolio-project__image" decoding="async" height="400" loading="lazy" src="./assets/images/project-dashboard.jpg" width="600"/>
+<div class="animfolio-f01-codecard__body">
+<h3 class="animfolio-project__title animfolio-card__title">PayStream API 服务</h3>
+<p class="animfolio-project__description">RESTful 支付处理 API，支持订阅、发票和多货币交易。符合 PCI DSS 标准，正常运行时间达 99.99%。</p>
+<div class="animfolio-project__stack animfolio-card__tags">
+<span class="animfolio-card__tag">Go</span>
+<span class="animfolio-card__tag">PostgreSQL</span>
+<span class="animfolio-card__tag">gRPC</span>
+<span class="animfolio-card__tag">Kubernetes</span>
+</div>
+<div class="animfolio-project__links animfolio-card__footer">
+<a class="animfolio-button animfolio-button--primary" href="#" rel="noopener noreferrer" target="_blank">
+							查看演示						</a>
+<a class="animfolio-button animfolio-button--secondary" href="#" rel="noopener noreferrer" target="_blank">
+							来源						</a>
+</div>
+</div>
+</div>
+<div class="animfolio-project animfolio-card animfolio-card--bordered animfolio-f01-codecard animfolio-stagger__item">
+<div aria-hidden="true" class="animfolio-f01-codecard__bar">
+<span class="animfolio-f01-codecard__dots">
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+<span class="animfolio-f01-codecard__dot"></span>
+</span>
+<span class="animfolio-f01-codecard__file">reposage-codebase-qa-assistant.tsx</span>
+</div>
+<img alt="RepoSage — Codebase Q&amp;A Assistant" class="animfolio-project__image" decoding="async" height="400" loading="lazy" src="./assets/images/project-tech.jpg" width="600"/>
+<div class="animfolio-f01-codecard__body">
+<h3 class="animfolio-project__title animfolio-card__title">RepoSage — Codebase Q&amp;A Assistant</h3>
+<p class="animfolio-project__description">一个由 RAG 驱动的助手，可以回答有关任何代码库的自然语言问题。将存储库分块并嵌入到 pgvector 存储中，检索最相关的上下文，并通过文件引用为 LLM 的答案提供依据 - 将新工程师的入职时间从几天缩短到几分钟。</p>
+<div class="animfolio-project__stack animfolio-card__tags">
+<span class="animfolio-card__tag">Python</span>
+<span class="animfolio-card__tag">浪链</span>
+<span class="animfolio-card__tag">OpenAI</span>
+<span class="animfolio-card__tag">pg向量</span>
+<span class="animfolio-card__tag">FastAPI</span>
+</div>
+<div class="animfolio-project__links animfolio-card__footer">
+<a class="animfolio-button animfolio-button--primary" href="#" rel="noopener noreferrer" target="_blank">
+							查看演示						</a>
+<a class="animfolio-button animfolio-button--secondary" href="#" rel="noopener noreferrer" target="_blank">
+							来源						</a>
+</div>
+</div>
+</div>
+</div>
+</div><!-- .animfolio-inner --></section><section class="animfolio-section animfolio-section--stats animfolio-section--align-center" data-animfolio-section="stats" id="stats"><div class="animfolio-inner"><div class="animfolio-section__header"><h2 class="animfolio-section__title">从数字来看</h2></div><div class="animfolio-stats animfolio-stagger" data-animfolio-stagger="0.15">
+<div class="animfolio-stat animfolio-card animfolio-card--bordered animfolio-stagger__item">
+<span class="animfolio-stat__number" data-animfolio-counter="120" data-animfolio-decimals="0" data-animfolio-prefix="" data-animfolio-suffix="+">120+</span>
+<span class="animfolio-stat__label">已上线项目</span>
+</div>
+<div class="animfolio-stat animfolio-card animfolio-card--bordered animfolio-stagger__item">
+<span class="animfolio-stat__number" data-animfolio-counter="4200" data-animfolio-decimals="0" data-animfolio-prefix="" data-animfolio-suffix="+">4,200+</span>
+<span class="animfolio-stat__label">GitHub 贡献</span>
+</div>
+<div class="animfolio-stat animfolio-card animfolio-card--bordered animfolio-stagger__item">
+<span class="animfolio-stat__number" data-animfolio-counter="2800" data-animfolio-decimals="0" data-animfolio-prefix="" data-animfolio-suffix="">2,800</span>
+<span class="animfolio-stat__label">获得的 GitHub 星标</span>
+</div>
+<div class="animfolio-stat animfolio-card animfolio-card--bordered animfolio-stagger__item">
+<span class="animfolio-stat__number" data-animfolio-counter="350" data-animfolio-decimals="0" data-animfolio-prefix="" data-animfolio-suffix="+">350+</span>
+<span class="animfolio-stat__label">已合并的代码提交</span>
+</div>
+</div>
+</div><!-- .animfolio-inner --></section><section class="animfolio-section animfolio-section--achievements animfolio-section--align-center" data-animfolio-section="achievements" id="achievements"><div class="animfolio-inner"><div class="animfolio-section__header"><h2 class="animfolio-section__title">认证</h2></div><div class="animfolio-grid animfolio-grid--3 animfolio-stagger" data-animfolio-stagger="0.1">
+<div class="animfolio-card animfolio-card--bordered animfolio-stagger__item">
+<h3 class="animfolio-card__title">AWS 认证机器学习 – 专业</h3>
+<span class="animfolio-card__meta">Amazon Web Services</span>
+<span class="animfolio-card__meta">2025 年 2 月</span>
+</div>
+<div class="animfolio-card animfolio-card--bordered animfolio-stagger__item">
+<h3 class="animfolio-card__title">Generative AI with LLMs</h3>
+<span class="animfolio-card__meta">DeepLearning.AI</span>
+<span class="animfolio-card__meta">2024 年 9 月</span>
+</div>
+</div>
+</div><!-- .animfolio-inner --></section><section class="animfolio-section animfolio-section--testimonials animfolio-section--align-center" data-animfolio-section="testimonials" id="testimonials"><div class="animfolio-inner"><div class="animfolio-section__header"><h2 class="animfolio-section__title">合作评价</h2></div><div class="animfolio-testimonials-carousel" data-animfolio-animate="fade-up">
+<div class="animfolio-testimonials-carousel__track" id="animfolio-testimonials-track">
+<div class="animfolio-testimonials-carousel__slide" id="testimonial-slide-0">
+<div class="animfolio-testimonial animfolio-card animfolio-card--bordered">
+<blockquote class="animfolio-testimonial__quote">她是我合作过最有能力的工程师之一，按时且在预算内完成复杂的微服务迁移，并保持零生产事故。</blockquote>
+<div class="animfolio-card__footer">
+<img alt="Sarah Chen" class="animfolio-testimonial__photo" decoding="async" height="40" loading="lazy" src="./assets/images/avatar-1.jpg" width="40"/>
+<div>
+<strong class="animfolio-testimonial__author">陈莎拉</strong>
+<span class="animfolio-testimonial__role">工程副总裁</span>
+<span class="animfolio-testimonial__company">, TechScale Inc.</span>
+</div>
+</div>
+</div>
+<div class="animfolio-testimonial animfolio-card animfolio-card--bordered">
+<blockquote class="animfolio-testimonial__quote">她的开源组件库为团队节省了数百小时，API 清晰、文档完整，并持续回应社区问题。</blockquote>
+<div class="animfolio-card__footer">
+<img alt="Marcus Rivera" class="animfolio-testimonial__photo" decoding="async" height="40" loading="lazy" src="./assets/images/avatar-2.jpg" width="40"/>
+<div>
+<strong class="animfolio-testimonial__author">马库斯·里维拉</strong>
+<span class="animfolio-testimonial__role">高级开发者</span>
+<span class="animfolio-testimonial__company">, OpenStack Labs</span>
+</div>
+</div>
+</div>
+</div>
+<div class="animfolio-testimonials-carousel__slide animfolio-testimonials-carousel__slide--single" id="testimonial-slide-1">
+<div class="animfolio-testimonial animfolio-card animfolio-card--bordered">
+<blockquote class="animfolio-testimonial__quote">她不只编写代码，更能构建解决方案。优化后，我们的平台性能提升了 300%。</blockquote>
+<div class="animfolio-card__footer">
+<img alt="Emily Watson" class="animfolio-testimonial__photo" decoding="async" height="40" loading="lazy" src="./assets/images/avatar-3.jpg" width="40"/>
+<div>
+<strong class="animfolio-testimonial__author">艾米丽·沃森</strong>
+<span class="animfolio-testimonial__role">技术负责人</span>
+<span class="animfolio-testimonial__company">, DataFlow Systems</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="animfolio-testimonials-carousel__dots">
+<a aria-label="第 1 页" class="animfolio-testimonials-carousel__dot animfolio-testimonials-carousel__dot--active" href="#testimonial-slide-0"></a>
+<a aria-label="第 2 页" class="animfolio-testimonials-carousel__dot" href="#testimonial-slide-1"></a>
+</div>
+</div>
+</div><!-- .animfolio-inner --></section><section class="animfolio-section animfolio-section--contact animfolio-section--align-center" data-animfolio-section="contact" id="contact"><div class="animfolio-inner"><div class="animfolio-section__header"><h2 class="animfolio-section__title">联系我</h2></div><div class="animfolio-contact" data-animfolio-animate="fade-up">
+<p class="animfolio-contact__heading">一起把好想法做成真正的产品。</p>
+<p class="animfolio-contact__description">如果你有项目想法、开源创意或合适的合作机会，欢迎给我留言，我会尽快回复。</p>
+<div class="animfolio-contact__layout">
+ 左侧：联系表单 
+<div class="animfolio-contact__form-wrapper">
+<form class="animfolio-form" novalidate="">
+<div class="animfolio-form__group">
+<label class="animfolio-form__label" for="animfolio-name">姓名</label>
+<input aria-required="true" class="animfolio-form__input" id="animfolio-name" name="name" required="" type="text"/>
+<span class="animfolio-form__error">请填写姓名。</span>
+</div>
+<div class="animfolio-form__group">
+<label class="animfolio-form__label" for="animfolio-email">邮箱</label>
+<input aria-required="true" class="animfolio-form__input" id="animfolio-email" name="email" required="" type="email"/>
+<span class="animfolio-form__error">请填写有效邮箱。</span>
+</div>
+<div class="animfolio-form__group">
+<label class="animfolio-form__label" for="animfolio-message">留言</label>
+<textarea aria-required="true" class="animfolio-form__textarea" id="animfolio-message" name="message" required="" rows="5"></textarea>
+<span class="animfolio-form__error">请填写留言内容。</span>
+</div>
+<div class="animfolio-form__honeypot">
+<input autocomplete="off" name="animfolio_hp" tabindex="-1" type="text"/>
+</div>
+<input name="animfolio_ts" type="hidden" value=""/>
+<input name="animfolio_js" type="hidden" value=""/>
+<div class="animfolio-form__success">谢谢！我会尽快回复您。</div>
+<button class="animfolio-button animfolio-button--primary animfolio-form__submit" type="submit">
+						发送留言					</button>
+</form>
+</div>
+ 右：二维码 
+<div class="animfolio-contact__qr-wrapper"><div class="animfolio-qr" data-animfolio-qr="" data-animfolio-vcard="QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpGTjpEYW5pZWwgTWVyY2VyDQpOOk1lcmNlcjtEYW5pZWw7OzsNClRJVExFOlNlbmlvciBGdWxsLVN0YWNrIEVuZ2luZWVyDQpFTUFJTDtUWVBFPVdPUks6eW91QGV4YW1wbGUuY29tDQpVUkw6aHR0cHM6Ly95b3VyLXdlYnNpdGUuZXhhbXBsZQ0KTk9URTpJJ20gYSBmdWxsLXN0YWNrIGRldmVsb3BlciB3aXRoIDgrIHllYXJzIG9mIGV4cGVyaWVuY2UgYnVpbGRpbmcgd2ViIGFwcGxpY2F0aW9ucyB0aGF0IHNvbHZlIHJlYWwgcHJvYmxlbXMuIEknbSBwYXNzaW9uYXRlIGFib3V0IGNsZWFuIGFyY2hpdGVjdHVyZVwsIGRldmVsb3BlciBleHBlcmllbmNlXCwgYW5kIG9wZW4gc291cmNlLiBXaGVuIEknbSBub3RcbkdpdGh1YjogaHR0cHM6Ly9naXRodWIuY29tL3lvdXJ1c2VybmFtZVxuTGlua2VkaW46IGh0dHBzOi8vbGlua2VkaW4uY29tL2luL3lvdXJ1c2VybmFtZVxuVHdpdHRlcjogaHR0cHM6Ly90d2l0dGVyLmNvbS95b3VydXNlcm5hbWVcbkRyaWJiYmxlOiBodHRwczovL2RyaWJiYmxlLmNvbS95b3VydXNlcm5hbWUNClgtU09DSUFMUFJPRklMRTtUWVBFPWdpdGh1YjpodHRwczovL2dpdGh1Yi5jb20veW91cnVzZXJuYW1lDQpYLVNPQ0lBTFBST0ZJTEU7VFlQRT1saW5rZWRpbjpodHRwczovL2xpbmtlZGluLmNvbS9pbi95b3VydXNlcm5hbWUNClgtU09DSUFMUFJPRklMRTtUWVBFPXR3aXR0ZXI6aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VydXNlcm5hbWUNClgtU09DSUFMUFJPRklMRTtUWVBFPWRyaWJiYmxlOmh0dHBzOi8vZHJpYmJibGUuY29tL3lvdXJ1c2VybmFtZQ0KUkVWOjIwMjYtMDctMTJUMTM6MjI6NDFaDQpFTkQ6VkNBUkQNCg=="><div class="animfolio-qr__code" style="width:200px;height:200px"></div><p class="animfolio-qr__caption">扫码保存我的联系方式</p><a class="animfolio-qr__download animfolio-button animfolio-button--secondary" download="" href="./assets/contact.vcf">下载电子名片</a></div></div> </div>
+</div>
+</div><!-- .animfolio-inner --></section><button aria-label="返回顶部" class="animfolio-back-to-top"><svg fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button><div class="animfolio-progress"><div class="animfolio-progress__bar"></div></div><div class="animfolio-footer-social animfolio-social-icons animfolio-social-icons--outline"><a aria-label="Github" href="https://github.com/yourusername" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="animfolio-social__label">Github</span></a><a aria-label="领英" href="https://linkedin.com/in/yourusername" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg><span class="animfolio-social__label">领英</span></a><a aria-label="推特" href="https://twitter.com/yourusername" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg><span class="animfolio-social__label">推特</span></a><a aria-label="运球" href="https://dribbble.com/yourusername" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path></svg><span class="animfolio-social__label">运球</span></a><a aria-label="邮箱" href="mailto:hello@yourdomain.com" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span class="animfolio-social__label">邮箱</span></a></div></div>
+<div aria-label="Color scheme preview (demo only)" style="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:99999;display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:rgba(18,18,24,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 30px rgba(0,0,0,.4)"><span style="padding:0 6px 0 10px;font:700 11px/1 -apple-system,sans-serif;letter-spacing:.4px;text-transform:uppercase;color:#8b90a0">颜色</span><a href="index.html" style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;text-decoration:none;font:600 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#c9cdd6;background:transparent;border:1px solid transparent;transition:.15s" title="默认紫色"><span style="width:12px;height:12px;border-radius:50%;background:#7F77DD;box-shadow:0 0 0 1px rgba(255,255,255,.25)"></span>紫色</a><a aria-current="true" href="v2.html" style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;text-decoration:none;font:600 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);transition:.15s" title="GitHub 绿色"><span style="width:12px;height:12px;border-radius:50%;background:#238636;box-shadow:0 0 0 1px rgba(255,255,255,.25)"></span>GitHub 绿色</a><a href="v3.html" style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;text-decoration:none;font:600 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#c9cdd6;background:transparent;border:1px solid transparent;transition:.15s" title="VS 代码蓝色"><span style="width:12px;height:12px;border-radius:50%;background:#007ACC;box-shadow:0 0 0 1px rgba(255,255,255,.25)"></span>VS 代码蓝色</a></div>
+<script>
+var animfolioSettings = {"animationIntensity":"medium","respectReducedMotion":"1","colorScheme":"dark","smoothScroll":"1","scrollBehavior":"smooth","customCursor":"","backToTop":"1","progressBar":"1","darkModeToggle":"1","debugMode":""};
+//# sourceURL=animfolio-engine-js-extra
+</script>
+<script src="./assets/js/wp-shim.js"></script>
+<script src="./assets/js/animfolio-engine.js"></script>
+<script src="./assets/js/modules/scroll-trigger.js"></script>
+<script src="./assets/js/modules/typed-text.js"></script>
+<script src="./assets/js/modules/counter.js"></script>
+<script src="./assets/js/modules/timeline-draw.js"></script>
+<script src="./assets/js/modules/stagger.js"></script>
+<script src="./assets/js/modules/parallax.js"></script>
+<script src="./assets/js/modules/progress-bar.js"></script>
+<script src="./assets/js/modules/smooth-scroll.js"></script>
+<script src="./assets/js/modules/theme-toggle.js"></script>
+<script src="./assets/js/vendor/qrcode-generator.min.js"></script>
+<script src="./assets/js/animfolio-qr.js"></script>
+<script src="./assets/js/animfolio-lightbox.js"></script>
+<script src="./assets/js/animfolio-casestudy.js"></script>
+<script src="./assets/js/format.js"></script>
+<script src="./assets/js/animfolio-contact-static.js"></script>
+<script src="../service-language.js?v=4"></script></body>
+</html>

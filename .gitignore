@@ -1,0 +1,5 @@
+.DS_Store
+.server/data/
+*.sqlite3
+*.log
+*.tmp
