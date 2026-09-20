@@ -1,0 +1,9 @@
+.git
+.gitignore
+.DS_Store
+.server/data
+__pycache__
+*.pyc
+*.sqlite3
+*.log
+*.tmp

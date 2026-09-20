@@ -1,0 +1,25 @@
+services:
+  portfolio:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8769}:8769"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8769
+      SITE_ROOT: /app
+      LIKES_DB: /data/likes.sqlite3
+    volumes:
+      - ./.server/data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8769/api/health', timeout=3).read()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
